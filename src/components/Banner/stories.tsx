@@ -4,6 +4,13 @@ import Banner, { BannerProps } from '.';
 export default {
   title: 'Banner',
   component: Banner,
+  decorators: [
+    (Banner) => (
+      <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+        <Banner />
+      </div>
+    )
+  ],
   argTypes: {
     ribbon: {
       type: 'string'
@@ -21,17 +28,9 @@ export default {
   }
 } as Meta;
 
-export const Default: Story<BannerProps> = (args) => (
-  <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
-    <Banner {...args} />
-  </div>
-);
+export const Default: Story<BannerProps> = (args) => <Banner {...args} />;
 
-export const WithRibbon: Story<BannerProps> = (args) => (
-  <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
-    <Banner {...args} />
-  </div>
-);
+export const WithRibbon: Story<BannerProps> = (args) => <Banner {...args} />;
 
 WithRibbon.args = {
   ribbon: '20% OFF',

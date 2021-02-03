@@ -4,6 +4,13 @@ import GameCard, { GameCardProps } from '.';
 export default {
   title: 'GameCard',
   component: GameCard,
+  decorators: [
+    (GameCard) => (
+      <div style={{ width: '30rem' }}>
+        <GameCard />
+      </div>
+    )
+  ],
   args: {
     title: 'Population Zero',
     developer: 'Rockstar Games',
@@ -22,16 +29,10 @@ export default {
   }
 } as Meta;
 
-export const Default: Story<GameCardProps> = (args) => (
-  <div style={{ width: '30rem' }}>
-    <GameCard {...args} />
-  </div>
-);
+export const Default: Story<GameCardProps> = (args) => <GameCard {...args} />;
 
 export const WithRibbon: Story<GameCardProps> = (args) => (
-  <div style={{ width: '30rem' }}>
-    <GameCard {...args} />
-  </div>
+  <GameCard {...args} />
 );
 
 WithRibbon.args = {

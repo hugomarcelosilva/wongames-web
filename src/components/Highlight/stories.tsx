@@ -6,19 +6,20 @@ import item from './mock';
 export default {
   title: 'Highlight',
   component: Highlight,
+  decorators: [
+    (Highlight) => (
+      <div style={{ maxWidth: '104rem' }}>
+        <Highlight />
+      </div>
+    )
+  ],
   args: { ...item }
 } as Meta;
 
-export const Default: Story<HighlightProps> = (args) => (
-  <div style={{ maxWidth: '104rem' }}>
-    <Highlight {...args} />
-  </div>
-);
+export const Default: Story<HighlightProps> = (args) => <Highlight {...args} />;
 
 export const WithFloatImage: Story<HighlightProps> = (args) => (
-  <div style={{ maxWidth: '104rem' }}>
-    <Highlight {...args} />
-  </div>
+  <Highlight {...args} />
 );
 
 WithFloatImage.args = {
