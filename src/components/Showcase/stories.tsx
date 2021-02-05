@@ -6,6 +6,11 @@ import gamesMock from 'components/GameCardSlider/mock';
 export default {
   title: 'Showcase',
   component: Showcase,
+  args: {
+    title: 'Most Popular',
+    highlight: highlightMock,
+    games: gamesMock
+  },
   decorators: [
     (Story) => (
       <div style={{ margin: '0 auto' }}>
@@ -22,12 +27,6 @@ export default {
 } as Meta;
 
 export const Default: Story<ShowcaseProps> = (args) => <Showcase {...args} />;
-
-Default.args = {
-  title: 'Most Popular',
-  highlight: highlightMock,
-  games: gamesMock
-};
 
 export const WithoutHighlight: Story<ShowcaseProps> = (args) => (
   <Showcase {...args} />

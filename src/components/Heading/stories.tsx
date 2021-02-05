@@ -4,6 +4,10 @@ import Heading, { HeadingProps } from '.';
 export default {
   title: 'Heading',
   component: Heading,
+  args: {
+    children: 'Most Popular',
+    color: 'white'
+  },
   argTypes: {
     children: {
       type: 'string'
@@ -12,8 +16,3 @@ export default {
 } as Meta;
 
 export const Default: Story<HeadingProps> = (args) => <Heading {...args} />;
-
-Default.args = {
-  children: 'Most Popular',
-  color: 'white'
-};

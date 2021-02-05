@@ -1,5 +1,6 @@
 import Base from 'templates/Base';
 
+import { Divider } from 'components/Divider';
 import Gallery, { GalleryImageProps } from 'components/Gallery';
 import GameInfo, { GameInfoProps } from 'components/GameInfo';
 import { GameCardProps } from 'components/GameCard';
@@ -49,6 +50,7 @@ const Game = ({
 
       <S.SectionGameDetails>
         <GameDetails {...details} />
+        <Divider />
       </S.SectionGameDetails>
 
       <Showcase

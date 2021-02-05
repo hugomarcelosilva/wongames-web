@@ -5,6 +5,9 @@ import Button, { ButtonProps } from '.';
 export default {
   title: 'Button',
   component: Button,
+  args: {
+    children: 'Buy now'
+  },
   argTypes: {
     children: {
       type: 'string'
@@ -16,10 +19,6 @@ export default {
 } as Meta;
 
 export const Default: Story<ButtonProps> = (args) => <Button {...args} />;
-
-Default.args = {
-  children: 'Buy now'
-};
 
 export const withIcon: Story<ButtonProps> = (args) => <Button {...args} />;
 
