@@ -4,14 +4,14 @@ import Radio, { RadioProps } from '.';
 export default {
   title: 'Form/Radio',
   component: Radio,
+  argTypes: {
+    onCheck: { action: 'checked' }
+  },
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
       default: 'won-dark'
     }
-  },
-  argTypes: {
-    onCheck: { action: 'checked' }
   }
 } as Meta;
 
