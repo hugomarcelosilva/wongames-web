@@ -7,7 +7,7 @@ import Radio from 'components/Radio';
 
 import * as S from './styles';
 
-type PaymentCard = {
+export type PaymentCard = {
   number: string;
   flag: string;
   img: string;
@@ -36,8 +36,8 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
                 {card.number}
               </S.CardInfo>
               <Radio
-                name="credit-card"
                 id={card.number}
+                name="credit-card"
                 value={card.number}
                 onCheck={() => setChecked(true)}
               />
