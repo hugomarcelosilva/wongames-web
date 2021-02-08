@@ -13,11 +13,10 @@ export default {
     )
   ],
   args: {
-    label: 'E-mail',
-    labelFor: 'Email',
     icon: <Email />,
-    id: 'Email',
     initialValue: '',
+    label: 'E-mail',
+    name: 'email',
     placeholder: 'john.cage@gmail.com'
   },
   argTypes: {
