@@ -5,8 +5,6 @@ import { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
 
 import { Container } from 'components/Container';
-import Footer from 'components/Footer';
-import Menu from 'components/Menu';
 import BannerSlider from 'components/BannerSlider';
 import Showcase from 'components/Showcase';
 
