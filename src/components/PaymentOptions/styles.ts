@@ -37,7 +37,7 @@ export const CardsList = styled.div`
   flex-direction: column;
 `;
 
-export const CardInfo = styled.div`
+export const CardInfo = styled.span`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -59,7 +59,7 @@ const ItemStyles = (theme: DefaultTheme) => css`
   align-items: center;
 `;
 
-export const CardItem = styled.div`
+export const CardItem = styled.label`
   ${({ theme }) => css`
     ${ItemStyles(theme)};
     justify-content: space-between;
