@@ -6,11 +6,10 @@ module.exports = {
     'src/**/*.ts(x)?',
     '!src/**/mock.ts',
     '!src/**/stories.tsx',
-    '!src/graphql/generated/**/*.ts',
-    '!src/graphql/queries/**/*.ts',
     '!src/pages/**/*.tsx',
     '!src/styles/**/*.ts',
     '!src/utils/apollo.ts',
+    '!src/utils/mappers.ts',
     '!src/types/**/*.d.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
