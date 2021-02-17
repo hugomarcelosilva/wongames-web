@@ -9,6 +9,9 @@ export default {
   args: {
     items
   },
+  argTypes: {
+    onFilter: { action: 'filter' }
+  },
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
@@ -30,5 +33,5 @@ export const WithInitialValues: Story<ExploreSidebarProps> = (args) => (
 );
 
 WithInitialValues.args = {
-  initialValues: { windows: true, sort_by: 'low-to-high' }
+  initialValues: { platforms: ['windows', 'linux'], sort_by: 'low-to-high' }
 };
