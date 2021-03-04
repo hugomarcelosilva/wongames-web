@@ -1,5 +1,6 @@
-import { useQueryGames } from 'graphql/queries/games';
 import { createContext, useContext, useEffect, useState } from 'react';
+
+import { useQueryGames } from 'graphql/queries/games';
 import formatPrice from 'utils/format-price';
 import { getStorageItem, setStorageItem } from 'utils/localStorage';
 import { cartMapper } from 'utils/mappers';
@@ -63,9 +64,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
   });
 
-  const total = data?.games.reduce((acc, game) => {
-    return acc + game.price;
-  }, 0);
+  const total = data?.games.reduce((acc, game) => acc + game.price, 0);
 
   const saveCart = (cartItems: string[]) => {
     setCartItems(cartItems);

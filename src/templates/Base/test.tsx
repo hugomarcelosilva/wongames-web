@@ -2,23 +2,19 @@ import { render, screen } from 'utils/test-utils';
 
 import Base from '.';
 
-jest.mock('components/Menu', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="Mock Menu"></div>;
-    }
-  };
-});
+jest.mock('components/Menu', () => ({
+  __esModule: true,
+  default: function Mock() {
+    return <div data-testid="Mock Menu" />;
+  }
+}));
 
-jest.mock('components/Footer', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="Mock Footer"></div>;
-    }
-  };
-});
+jest.mock('components/Footer', () => ({
+  __esModule: true,
+  default: function Mock() {
+    return <div data-testid="Mock Footer" />;
+  }
+}));
 
 describe('<Base />', () => {
   it('should render menu, footer and children', () => {

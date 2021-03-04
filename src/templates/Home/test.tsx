@@ -1,5 +1,4 @@
 import { render, screen } from 'utils/test-utils';
-
 import bannerMock from 'components/BannerSlider/mock';
 import gamesMock from 'components/GameCardSlider/mock';
 import highlightMock from 'components/Highlight/mock';
@@ -22,23 +21,19 @@ const props = {
   freeHighlight: highlightMock
 };
 
-jest.mock('components/Showcase', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="Mock Showcase"></div>;
-    }
-  };
-});
+jest.mock('components/Showcase', () => ({
+  __esModule: true,
+  default: function Mock() {
+    return <div data-testid="Mock Showcase" />;
+  }
+}));
 
-jest.mock('components/BannerSlider', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="Mock Banner Slider"></div>;
-    }
-  };
-});
+jest.mock('components/BannerSlider', () => ({
+  __esModule: true,
+  default: function Mock() {
+    return <div data-testid="Mock Banner Slider" />;
+  }
+}));
 
 describe('<Home />', () => {
   it('should render banner and showcases', () => {
