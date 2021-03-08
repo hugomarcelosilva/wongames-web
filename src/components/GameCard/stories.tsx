@@ -1,43 +1,54 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
-import GameCard, { GameCardProps } from '.';
+import { Story, Meta } from '@storybook/react/types-6-0'
+import { CartContextData } from 'hooks/use-cart'
+
+import GameCard, { GameCardProps } from '.'
 
 export default {
   title: 'GameCard',
   component: GameCard,
-  decorators: [
-    (GameCard) => (
-      <div style={{ width: '30rem' }}>
-        <GameCard />
-      </div>
-    )
-  ],
+  parameters: {
+    backgrounds: {
+      default: 'won-dark'
+    }
+  },
   args: {
     slug: 'population-zero',
     title: 'Population Zero',
     developer: 'Rockstar Games',
-    img: 'img/population-zero.png',
+    img: 'https://source.unsplash.com/user/willianjusten/300x140',
     price: 235,
     promotionalPrice: 215
   },
   argTypes: {
     onFav: { action: 'clicked' },
     ribbon: { type: 'string' }
-  },
-  parameters: {
-    backgrounds: {
-      default: 'won-dark'
-    }
   }
-} as Meta;
+} as Meta
 
-export const Default: Story<GameCardProps> = (args) => <GameCard {...args} />;
+export const Default: Story<GameCardProps> = (args) => (
+  <div style={{ width: '30rem' }}>
+    <GameCard {...args} />
+  </div>
+)
+
+export const IsInCart: Story<GameCardProps & CartContextData> = (args) => (
+  <div style={{ width: '30rem' }}>
+    <GameCard {...args} />
+  </div>
+)
+
+IsInCart.args = {
+  isInCart: () => true
+}
 
 export const WithRibbon: Story<GameCardProps> = (args) => (
-  <GameCard {...args} />
-);
+  <div style={{ width: '30rem' }}>
+    <GameCard {...args} />
+  </div>
+)
 
 WithRibbon.args = {
   ribbon: '20% OFF',
   ribbonSize: 'small',
   ribbonColor: 'primary'
-};
+}

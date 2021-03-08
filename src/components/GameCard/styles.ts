@@ -1,24 +1,4 @@
-import styled, { css, DefaultTheme } from 'styled-components';
-
-type PriceProps = {
-  isPromotional?: boolean;
-};
-
-const priceModifiers = {
-  default: (theme: DefaultTheme) => css`
-    color: ${theme.colors.white};
-    padding: 0 ${theme.spacings.xxsmall};
-    background-color: ${theme.colors.secondary};
-    border-radius: ${theme.border.radius};
-    margin-right: calc(${theme.spacings.xxsmall} / 2);
-  `,
-
-  promotional: (theme: DefaultTheme) => css`
-    color: ${theme.colors.gray};
-    text-decoration: line-through;
-    margin-right: ${theme.spacings.xxsmall};
-  `
-};
+import styled, { css, DefaultTheme } from 'styled-components'
 
 export const Wrapper = styled.article`
   ${({ theme }) => css`
@@ -29,7 +9,7 @@ export const Wrapper = styled.article`
     height: 100%;
     background-color: ${theme.colors.white};
   `}
-`;
+`
 
 export const ImageBox = styled.a`
   height: 14rem;
@@ -55,11 +35,12 @@ export const ImageBox = styled.a`
     0% {
       background-position: -40rem 0;
     }
+
     100% {
       background-position: 40rem 0;
     }
   }
-`;
+`
 
 export const Content = styled.div`
   ${({ theme }) => css`
@@ -70,12 +51,12 @@ export const Content = styled.div`
     height: 100%;
     margin: ${theme.spacings.xsmall};
   `}
-`;
+`
 
 export const Info = styled.a`
   max-width: calc(100% - 2.5rem);
   text-decoration: none;
-`;
+`
 
 export const Title = styled.h3`
   ${({ theme }) => css`
@@ -84,7 +65,7 @@ export const Title = styled.h3`
     font-weight: ${theme.font.bold};
     color: ${theme.colors.black};
   `}
-`;
+`
 
 export const Developer = styled.h4`
   ${({ theme }) => css`
@@ -92,7 +73,7 @@ export const Developer = styled.h4`
     font-weight: ${theme.font.bold};
     color: ${theme.colors.gray};
   `}
-`;
+`
 
 export const FavButton = styled.div`
   ${({ theme }) => css`
@@ -106,7 +87,7 @@ export const FavButton = styled.div`
       width: 2.5rem;
     }
   `}
-`;
+`
 
 export const BuyBox = styled.div`
   ${({ theme }) => css`
@@ -115,7 +96,27 @@ export const BuyBox = styled.div`
     justify-content: flex-end;
     margin-top: ${theme.spacings.xxsmall};
   `}
-`;
+`
+
+type PriceProps = {
+  isPromotional?: boolean
+}
+
+const priceModifiers = {
+  default: (theme: DefaultTheme) => css`
+    color: ${theme.colors.white};
+    padding: 0 ${theme.spacings.xxsmall};
+    background-color: ${theme.colors.secondary};
+    border-radius: ${theme.border.radius};
+    margin-right: calc(${theme.spacings.xxsmall} / 2);
+  `,
+
+  promotional: (theme: DefaultTheme) => css`
+    color: ${theme.colors.gray};
+    text-decoration: line-through;
+    margin-right: ${theme.spacings.xxsmall};
+  `
+}
 
 export const Price = styled.div<PriceProps>`
   ${({ theme, isPromotional }) => css`
@@ -127,4 +128,4 @@ export const Price = styled.div<PriceProps>`
     ${!isPromotional && priceModifiers.default(theme)};
     ${isPromotional && priceModifiers.promotional(theme)};
   `}
-`;
+`

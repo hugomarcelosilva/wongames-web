@@ -10,8 +10,7 @@ describe('useCart', () => {
   beforeEach(() => {
     window.localStorage.clear();
   });
-
-  it('should return items and its info if there any in the cart', async () => {
+  it('should return items and its info if there are any in the cart', async () => {
     const wrapper = ({ children }: CartProviderProps) => (
       <MockedProvider mocks={[gamesMock]}>
         <CartProvider>{children}</CartProvider>
@@ -68,12 +67,12 @@ describe('useCart', () => {
     });
 
     expect(result.current.quantity).toBe(1);
-    expect(window.localStorage.getItem('WONGAMES_cartItems')).toStrictEqual(
+    expect(window.localStorage.getItem('WONGAMES_cartItems')).toBe(
       JSON.stringify(['1'])
     );
   });
 
-  it('should remove an item from the cart', () => {
+  it('should remove and item from the cart', () => {
     const wrapper = ({ children }: CartProviderProps) => (
       <MockedProvider mocks={[gamesMock]}>
         <CartProvider>{children}</CartProvider>
@@ -91,7 +90,7 @@ describe('useCart', () => {
     });
 
     expect(result.current.quantity).toBe(0);
-    expect(window.localStorage.getItem('WONGAMES_cartItems')).toStrictEqual(
+    expect(window.localStorage.getItem('WONGAMES_cartItems')).toBe(
       JSON.stringify([])
     );
   });
@@ -114,7 +113,7 @@ describe('useCart', () => {
     });
 
     expect(result.current.quantity).toBe(0);
-    expect(window.localStorage.getItem('WONGAMES_cartItems')).toStrictEqual(
+    expect(window.localStorage.getItem('WONGAMES_cartItems')).toBe(
       JSON.stringify([])
     );
   });

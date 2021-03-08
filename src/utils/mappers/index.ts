@@ -3,10 +3,11 @@ import {
   QueryHome_banners,
   QueryHome_sections_freeGames_highlight
 } from 'graphql/generated/QueryHome';
+
 import formatPrice from 'utils/format-price';
 
-export const bannerMapper = (banners: QueryHome_banners[]) =>
-  banners.map((banner) => ({
+export const bannerMapper = (banners: QueryHome_banners[]) => {
+  return banners.map((banner) => ({
     img: `http://localhost:1337${banner.image?.url}`,
     title: banner.title,
     subtitle: banner.subtitle,
@@ -18,9 +19,10 @@ export const bannerMapper = (banners: QueryHome_banners[]) =>
       ribbonSize: banner.ribbon.size
     })
   }));
+};
 
-export const gamesMapper = (games: QueryGames_games[] | null | undefined) =>
-  games
+export const gamesMapper = (games: QueryGames_games[] | null | undefined) => {
+  return games
     ? games.map((game) => ({
         id: game.id,
         title: game.name,
@@ -30,11 +32,12 @@ export const gamesMapper = (games: QueryGames_games[] | null | undefined) =>
         price: game.price
       }))
     : [];
+};
 
 export const highlightMapper = (
   highlight: QueryHome_sections_freeGames_highlight | null | undefined
-) =>
-  highlight
+) => {
+  return highlight
     ? {
         title: highlight.title,
         subtitle: highlight.subtitle,
@@ -45,9 +48,10 @@ export const highlightMapper = (
         alignment: highlight.alignment
       }
     : {};
+};
 
-export const cartMapper = (games: QueryGames_games[] | undefined) =>
-  games
+export const cartMapper = (games: QueryGames_games[] | undefined) => {
+  return games
     ? games.map((game) => ({
         id: game.id,
         img: `http://localhost:1337${game.cover?.url}`,
@@ -55,3 +59,4 @@ export const cartMapper = (games: QueryGames_games[] | undefined) =>
         price: formatPrice(game.price)
       }))
     : [];
+};

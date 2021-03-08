@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
-import media from 'styled-media-query';
+import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
-import * as RibbonStyles from 'components/Ribbon/styles';
+import * as RibbonStyles from 'components/Ribbon/styles'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -22,14 +22,13 @@ export const Wrapper = styled.div`
         right: ${theme.spacings.small};
         top: ${theme.spacings.small};
         font-size: ${theme.font.sizes.large};
-
         &:before {
           border: none;
         }
       }
     `}
   `}
-`;
+`
 
 export const Description = styled.p`
   ${({ theme }) => css`
@@ -41,7 +40,7 @@ export const Description = styled.p`
       max-width: 77rem;
     `}
   `}
-`;
+`
 
 export const ButtonsWrapper = styled.div`
   ${({ theme }) => css`
@@ -63,4 +62,4 @@ export const ButtonsWrapper = styled.div`
       }
     `}
   `}
-`;
+`

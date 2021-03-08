@@ -3,9 +3,10 @@ import {
   QueryHome_banners,
   QueryHome_sections_newGames_highlight
 } from 'graphql/generated/QueryHome';
+
 import { bannerMapper, cartMapper, gamesMapper, highlightMapper } from '.';
 
-describe('bannerMapper', () => {
+describe('bannerMapper()', () => {
   it('should return the right format when mapped', () => {
     const banner = {
       image: {

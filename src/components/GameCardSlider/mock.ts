@@ -1,5 +1,6 @@
 export default [
   {
+    id: '1',
     title: 'Population Zero',
     slug: 'population-zero',
     developer: 'Rockstar Games',
@@ -8,6 +9,7 @@ export default [
     promotionalPrice: 215
   },
   {
+    id: '1',
     title: 'Population Zero',
     slug: 'population-zero',
     developer: 'Rockstar Games',
@@ -16,6 +18,7 @@ export default [
     promotionalPrice: 215
   },
   {
+    id: '1',
     title: 'Population Zero',
     slug: 'population-zero',
     developer: 'Rockstar Games',
@@ -24,6 +27,7 @@ export default [
     promotionalPrice: 215
   },
   {
+    id: '1',
     title: 'Population Zero',
     slug: 'population-zero',
     developer: 'Rockstar Games',
@@ -32,6 +36,7 @@ export default [
     promotionalPrice: 215
   },
   {
+    id: '1',
     title: 'Population Zero',
     slug: 'population-zero',
     developer: 'Rockstar Games',
@@ -40,6 +45,7 @@ export default [
     promotionalPrice: 215
   },
   {
+    id: '1',
     title: 'Population Zero',
     slug: 'population-zero',
     developer: 'Rockstar Games',

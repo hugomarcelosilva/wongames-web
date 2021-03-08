@@ -1,32 +1,30 @@
-import Link from 'next/link';
+import Link from 'next/link'
+import { Favorite, FavoriteBorder } from '@styled-icons/material-outlined'
 
-import {
-  AddShoppingCart,
-  Favorite,
-  FavoriteBorder
-} from '@styled-icons/material-outlined';
+import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
+import CartButton from 'components/CartButton'
 
-import Ribbon, { RibbonColorsProps, RibbonSizesProps } from 'components/Ribbon';
-import Button from 'components/Button';
-import formatPrice from 'utils/format-price';
+import formatPrice from 'utils/format-price'
 
-import * as S from './styles';
+import * as S from './styles'
 
 export type GameCardProps = {
-  slug: string;
-  title: string;
-  developer: string;
-  img: string;
-  price: number;
-  promotionalPrice?: number;
-  favorite?: boolean;
-  ribbon?: React.ReactNode;
-  ribbonColor?: RibbonColorsProps;
-  ribbonSize?: RibbonSizesProps;
-  onFav?: () => void;
-};
+  id: string
+  slug: string
+  title: string
+  developer: string
+  img: string
+  price: number
+  promotionalPrice?: number
+  favorite?: boolean
+  ribbon?: React.ReactNode
+  ribbonColor?: RibbonColors
+  ribbonSize?: RibbonSizes
+  onFav?: () => void
+}
 
 const GameCard = ({
+  id,
   slug,
   title,
   developer,
@@ -45,13 +43,13 @@ const GameCard = ({
         {ribbon}
       </Ribbon>
     )}
-    <Link href={`/game/${slug}`} passHref>
+    <Link href={`game/${slug}`} passHref>
       <S.ImageBox>
         <img src={img} alt={title} />
       </S.ImageBox>
     </Link>
     <S.Content>
-      <Link href={`/game/${slug}`} passHref>
+      <Link href={`game/${slug}`} passHref>
         <S.Info>
           <S.Title>{title}</S.Title>
           <S.Developer>{developer}</S.Developer>
@@ -69,10 +67,10 @@ const GameCard = ({
           <S.Price isPromotional>{formatPrice(price)}</S.Price>
         )}
         <S.Price>{formatPrice(promotionalPrice || price)}</S.Price>
-        <Button icon={<AddShoppingCart />} size="small" />
+        <CartButton id={id} />
       </S.BuyBox>
     </S.Content>
   </S.Wrapper>
-);
+)
 
-export default GameCard;
+export default GameCard
