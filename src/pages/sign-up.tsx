@@ -3,7 +3,7 @@ import Auth from 'templates/Auth';
 
 export default function SignUp() {
   return (
-    <Auth title="Sign up">
+    <Auth title="Sign Up">
       <FormSignUp />
     </Auth>
   );
