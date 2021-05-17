@@ -3,7 +3,6 @@ import { signOut } from 'next-auth/client';
 
 import {
   AccountCircle,
-  CreditCard,
   ExitToApp,
   FormatListBulleted
 } from '@styled-icons/material-outlined';
@@ -11,7 +10,7 @@ import {
 import * as S from './styles';
 
 export type ProfileMenuProps = {
-  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders' | string;
+  activeLink?: '/profile/me' | '/profile/orders' | string;
 };
 
 const ProfileMenu = ({ activeLink }: ProfileMenuProps) => (
@@ -20,13 +19,6 @@ const ProfileMenu = ({ activeLink }: ProfileMenuProps) => (
       <S.Link isActive={activeLink === '/profile/me'} title="My profile">
         <AccountCircle size={24} />
         <span>My profile</span>
-      </S.Link>
-    </Link>
-
-    <Link href="/profile/cards" passHref>
-      <S.Link isActive={activeLink === '/profile/cards'} title="My cards">
-        <CreditCard size={24} />
-        <span>My cards</span>
       </S.Link>
     </Link>
 
