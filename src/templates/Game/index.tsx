@@ -1,4 +1,4 @@
-import Base from 'templates/Base';
+import Image from 'next/image';
 
 import { Divider } from 'components/Divider';
 import Gallery, { GalleryImageProps } from 'components/Gallery';
@@ -8,6 +8,7 @@ import GameDetails, { GameDetailsProps } from 'components/GameDetails';
 import { HighlightProps } from 'components/Highlight';
 import Showcase from 'components/Showcase';
 import TextContent from 'components/TextContent';
+import Base from 'templates/Base';
 
 import * as S from './styles';
 
@@ -37,7 +38,9 @@ const Game = ({
   recommendedGames
 }: GameTemplateProps) => (
   <Base>
-    <S.Cover src={cover} role="image" aria-label="cover" />
+    <S.Cover>
+      <Image src={cover} alt={gameInfo.title} layout="fill" />
+    </S.Cover>
 
     <S.Main>
       <S.SectionGameInfo>
