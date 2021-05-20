@@ -6,5 +6,8 @@ module.exports = withPWA({
   pwa: {
     dest: 'public',
     disable: isDev
+  },
+  images: {
+    domains: ['localhost', 'res.cloudinary.com']
   }
 });
