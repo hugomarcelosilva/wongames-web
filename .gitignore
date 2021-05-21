@@ -39,3 +39,7 @@ storybook-static
 
 # vercel
 .vercel
+
+# cypress
+cypress/screenshots
+cypress/videos
