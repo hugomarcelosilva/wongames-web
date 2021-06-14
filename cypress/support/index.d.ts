@@ -11,10 +11,10 @@ type FieldsAttributes = {
 };
 
 type User = {
-  username: string
-  email: string
-  password: string
-}
+  username: string;
+  email: string;
+  password: string;
+};
 
 declare namespace Cypress {
   interface Chainable {
@@ -28,17 +28,29 @@ declare namespace Cypress {
      * Custom command to sign up
      * @example cy.signUp(user)
      */
-     signUp(user: User): Chainable<Element>
+    signUp(user: User): Chainable<Element>;
 
-     /**
+    /**
      * Custom command to sign up
      * @example cy.signIn()
      */
-    signIn(email?: string, password?: string): Chainable<Element>
+    signIn(email?: string, password?: string): Chainable<Element>;
+
+    /**
+     * Custom command to add game to cart by index
+     * @example cy.addToCartByIndex(3)
+     */
+    addToCartByIndex(index: number): Chainable<Element>;
+
+    /**
+     * Custom command to add game to cart by index
+     * @example cy.removeFromCartByIndex(3)
+     */
+    removeFromCartByIndex(index: number): Chainable<Element>;
 
     /**
      * Custom command to get element by data-cy values
-     * @example cy.getByDataCy('selector)
+     * @example cy.getByDataCy('selector')
      */
     getByDataCy(selector: string): Chainable<Element>;
 
