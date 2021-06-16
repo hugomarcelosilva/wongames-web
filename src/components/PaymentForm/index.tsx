@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { PaymentIntent, StripeCardElementChangeEvent } from '@stripe/stripe-js';
 import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined';
-import { Session } from 'next-auth/client';
+import { Session } from 'next-auth';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -33,7 +33,10 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
   useEffect(() => {
     async function setPaymentMode() {
       if (items.length) {
-        const data = await createPaymentIntent({ items, token: session.jwt });
+        const data = await createPaymentIntent({
+          items,
+          token: session.jwt as string
+        });
 
         if (data.freeGames) {
           setFreeGames(true);
@@ -61,7 +64,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
     const data = await createPayment({
       items,
       paymentIntent,
-      token: session.jwt
+      token: session.jwt as string
     });
 
     return data;

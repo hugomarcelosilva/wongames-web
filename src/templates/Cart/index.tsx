@@ -1,7 +1,7 @@
 import { Info } from '@styled-icons/material-outlined';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-import { Session } from 'next-auth/client';
+import { Session } from 'next-auth';
 
 import CartList, { CartListProps } from 'components/CartList';
 import { Container } from 'components/Container';
