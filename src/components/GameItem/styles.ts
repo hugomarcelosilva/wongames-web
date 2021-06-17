@@ -117,7 +117,7 @@ export const CardInfo = styled.div`
     display: flex;
     align-items: center;
 
-    img {
+    span {
       margin-left: ${theme.spacings.xxsmall};
     }
 
